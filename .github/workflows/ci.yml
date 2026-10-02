@@ -1,4 +1,4 @@
-name: Build & Verify Simulation
+name: "Build & Verify Simulation"
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
           make clean
           make all CC=gcc
 
-      - name: Run Scenario 1: Standard Benchmark (Thread 1 & Thread 2)
+      - name: "Run Scenario 1: Standard Benchmark (Thread 1 & Thread 2)"
         run: |
           make test
           test -f snapshots.txt
