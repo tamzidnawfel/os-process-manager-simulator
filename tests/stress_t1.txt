@@ -1,0 +1,6 @@
+sleep 80
+fork 1
+sleep 100
+exit 2 42
+sleep 200
+ps

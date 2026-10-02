@@ -1,0 +1,46 @@
+name: Build & Verify Simulation
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Build Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential gcc clang
+
+      - name: Compile with GCC (-Wall -Wextra)
+        run: |
+          make clean
+          make all CC=gcc
+
+      - name: Run Scenario 1: Standard Benchmark (Thread 1 & Thread 2)
+        run: |
+          make test
+          test -f snapshots.txt
+          echo "Verified: snapshots.txt successfully generated."
+
+      - name: Run Scenario 2: Deep Process Tree
+        run: |
+          make tree
+
+      - name: Run Scenario 3: High Concurrency Stress Test
+        run: |
+          make stress
+
+      - name: Compile and Test with Clang
+        run: |
+          make clean
+          make all CC=clang
+          ./pm_sim tests/stress_t0.txt tests/stress_t1.txt tests/stress_t2.txt

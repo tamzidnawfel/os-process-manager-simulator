@@ -1,0 +1,24 @@
+# Compiled binaries and executables
+pm_sim
+pm_sim.exe
+*.exe
+*.out
+*.app
+
+# Object files and libraries
+*.o
+*.obj
+*.so
+*.dylib
+*.a
+
+# Simulation runtime output
+snapshots.txt
+
+# IDE, editor and OS metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~

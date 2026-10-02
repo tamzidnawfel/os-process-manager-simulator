@@ -1,0 +1,6 @@
+fork 1
+sleep 150
+fork 2
+sleep 200
+wait 1 -1
+ps
