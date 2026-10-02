@@ -1,7 +1,7 @@
 # Multithreaded Operating System Process Manager Simulator
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/tamzidnawfel/os-process-manager-simulator)
-[![Build & Verify](https://github.com/tamzidnawfel/os-process-manager-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/tamzidnawfel/os-process-manager-simulator/actions)
+[![CI](https://github.com/tamzidnawfel/os-process-manager-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/tamzidnawfel/os-process-manager-simulator/actions)
 ![C Standard](https://img.shields.io/badge/Language-C11-00599C.svg?logo=c)
 ![Threading](https://img.shields.io/badge/Concurrency-POSIX_pthreads-FF6F00.svg)
 ![Standard](https://img.shields.io/badge/Standard-POSIX.1c-blue.svg)
@@ -266,7 +266,7 @@ make clean
 Every commit pushed to this repository triggers an automated **GitHub Actions CI workflow** on Ubuntu Linux:
 - Compiles with **GCC** using `-Wall -Wextra`
 - Executes all 3 test scenarios and verifies `snapshots.txt` integrity
-- Recompiles with **Clang** to guarantee multi-compiler compliance
+- Recompiles and validates all test suites with **Clang** to guarantee multi-compiler compliance
 
 ---
 
